@@ -4,7 +4,20 @@
 #include <stdexcept>
 namespace alisov
 {
-  class shape
+  struct point_t
+  {
+    double x;
+    double y;
+  };
+
+  struct rectangle_t
+  {
+    double width;
+    double height;
+    point_t pos;
+  };
+
+  class Shape
   {
   public:
     virtual ~Shape() noexcept = default;

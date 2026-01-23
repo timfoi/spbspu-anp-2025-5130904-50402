@@ -29,6 +29,22 @@ namespace alisov
     void scaleWithCheck(double coef);
     virtual void Scale(double coef) noexcept = 0;
   };
+
+  class Rectangle : public Shape
+  {
+  public:
+    explicit Rectangle(point_t pos, double width, double height);
+    double getArea() const noexcept override;
+    rectangle_t getFrameRect() const noexcept override;
+    void move(point_t c) noexcept override;
+    void move(double d_x, double d_y) noexcept override;
+
+    void Scale(double coef) noexcept override;
+
+  private:
+    point_t pos_;
+    double width_, height_;
+  };
 }
 
 int main()
